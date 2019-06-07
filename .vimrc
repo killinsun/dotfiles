@@ -34,6 +34,9 @@ set imsearch=0
 set wildmenu
 set history=5000
 
+" Enable linking clipboard
+set clipboard+=unnamed
+
 
 " Disable color schema background
 autocmd ColorScheme * highlight Normal ctermbg=none
