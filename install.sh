@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-brew install vim
+#brew install vim
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh
 
@@ -11,14 +11,14 @@ fi
 
 sh ~/installer.sh ~/.vim/bundle
 
-ln -sf ~/Documents/Projects/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/Documents/Projects/dotfiles/.hyper.js ~/.hyper.js
-ln -sf ~/Documents/Projects/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/Documents/Projects/dotfiles/.vim/colors ~/.vim/colors
-ln -sf ~/Documents/Projects/dotfiles/.vim/ftdetect ~/.vim/ftdetect
-ln -sf ~/Documents/Projects/dotfiles/.vim/indent ~/.vim/indent
-ln -sf ~/Documents/Projects/dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/Documents/Projects/dotfiles/.bashrc ~/.bashrc
+ln -sf /usr/local/src/dotfiles/.gitconfig ~/.gitconfig
+ln -sf /usr/local/src/dotfiles/.hyper.js ~/.hyper.js
+ln -sf /usr/local/src/dotfiles/.vimrc ~/.vimrc
+ln -sf /usr/local/src/dotfiles/.vim/colors ~/.vim/colors
+ln -sf /usr/local/src/dotfiles/.vim/ftdetect ~/.vim/ftdetect
+ln -sf /usr/local/src/dotfiles/.vim/indent ~/.vim/indent
+ln -sf /usr/local/src/dotfiles/.bash_profile ~/.bash_profile
+ln -sf /usr/local/src/dotfiles/.bashrc ~/.bashrc
 
 
 sh ~/.bash_profile

@@ -9,10 +9,10 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 15,
+    fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Ricty Regular", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily:'"Migu 2M", "Source Han Code JP"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -43,7 +43,7 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#000',
+    // backgroundColor: '#000',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
@@ -93,7 +93,7 @@ module.exports = {
 
     MaterialTheme: {
       theme: 'Palenight',
-      backgroundOpacity: '1.0',
+      backgroundOpacity: '0.5',
       accentColor: '#64FFDA',
       vibrancy: 'dark'
     },
@@ -159,7 +159,8 @@ module.exports = {
     "hyper-search",
     "hypercwd",
     "hyper-statusline",
-    "gitrocket"
+    "hyper-tab-icons"
+
   ],
 
   // in development, you can create a directory under
