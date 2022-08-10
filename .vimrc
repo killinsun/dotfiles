@@ -149,4 +149,3 @@ let g:indentLine_char = ''
 
 " Enable deoplete.vim
 let g:deoplete#enable_at_atartup = 1
-

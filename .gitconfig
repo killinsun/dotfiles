@@ -1,3 +1,5 @@
 [user]
-	name = killinsun
+	name = kill_in_sun
 	email = noneck.0311@gmail.com
+[ghq]
+	root = ~/src
