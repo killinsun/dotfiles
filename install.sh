@@ -39,7 +39,9 @@ ln -sf $SCRIPT_DIR/tmux-alias.sh ~/bin/tmux-alias.sh
 
 if [ $OS == 'Mac' ]; then
 	unlink ~/.zshrc
+  unlink $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
 	ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
+  ln -sf $SCRIPT_DIR/.ghostty.config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
 fi
 
 if [ $OS == 'Linux' ]; then

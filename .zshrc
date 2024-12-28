@@ -14,6 +14,9 @@ alias tmux-4pane='source ~/bin/tmux-alias.sh'
 # ---------------------
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="/Users/ryota/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.rd/bin"
 
 # ---------------------
 # Peco settings
@@ -35,11 +38,38 @@ bindkey '^]' peco-src
 # ---------------------
 # Node.js - NVM
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/.bash_tools
 
-if [[ ! -n $TMUX ]]; then
-  tmux new-session
+# Ruby
+eval "$(rbenv init -)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# ---------------------
+# Other tools
+# ---------------------
+
+# Tmux
+#
+#if [[ ! -n $TMUX ]]; then
+#  tmux new-session
+#fi
+if [[ "$TERM_PROGRAM" = "iTerm.app" ]]; then
+    if [[ -z "$TMUX" ]]; then
+        tmux attach || tmux new-session
+    fi
 fi
+
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export PATH=$PATH:/Users/ryota/Library/Application\ Support/JetBrains/Toolbox/scripts
+
+. "$HOME/.cargo/env"
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"

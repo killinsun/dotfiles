@@ -3,3 +3,10 @@
 	email = noneck.0311@gmail.com
 [ghq]
 	root = ~/src
+[url "github:"]
+  InsteadOf = https://github.com/
+  InsteadOf = git@github.com:
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
