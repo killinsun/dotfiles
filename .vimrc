@@ -1,94 +1,52 @@
-" tabstop nums
-set tabstop=2
-set softtabstop=2
-" Number of (>>/<<)indent
-set expandtab
-set shiftwidth=2
-" Auto indent
-set autoindent
+" Copied from https://hir0ki-tech.hatenablog.jp/entry/2019/07/02/022014
+" Thanks!
+
+"==================================language=======================================
+set encoding=japan                      "
+set encoding=utf-8                      "
+set fileencodings=utf-8                    
+set fileformats=unix,dos,mac
+set ambiwidth=double                    "全角文字を半角2文字分で表現？
 
 
-" Show cursor
-set number
-set ruler
-
-" Default file encoding
-set fileencoding=utf-8
-" set fileencodings=sjis,utf-8,iso-2022-jp,euc-jp
-
-" backspace setting
-set backspace=indent,eol,start
-
-set nocp
-" Hilights of match texts when search
-set showmatch
-set hlsearch
-
-" When change insertmode, turn off IME
-set iminsert=0
-set imsearch=0
-
-:set list
-:set listchars=tab:>-,extends:<,trail:-,eol:<
-
-set wildmenu
-set history=5000
-
-" Enable linking clipboard
-set clipboard+=unnamed
+"===================================color==========================================
+syntax on                               "コードの色分け
+colorscheme molokai											"カラースキーム
+set t_Co=256                            "色数
 
 
-" Disable color schema background
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
+"===================================display========================================
+set number                  "行番号の表示
+set title                   "編集中ファイル名の表示
+set showmatch               "括弧入力時に対応する括弧のハイライトを表示,また対応する括弧へ移動
+set matchtime=0             "括弧入力時，括弧末へ移動する時間
+set showmode                "モードを表示する
+"set smartindent
+set autoindent              "オートでインデントを入れる
+set tabstop=2               "タブキーのスペース数
+set shiftwidth=2            "オートインデントのスペース数
+set showcmd                 "入力中のコマンドをステータスに表示
+set cursorline              "現在の行を表示
+set textwidth=0             "行の文字数制限の解除
+set wrap                    "window幅より文字数が多いなら折り返し表示
+set ruler                   "カーソルの位置を行列番号で表示
+set cindent                 "C言語みたいなインデントを自動で入れる
+set wildmenu                "タブ補完
+set wildmode=list:longest   "
 
-" Show infomation of last using.
-colorscheme molokai
-" set t_Co=256
 
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-set breakindent
+"====================================search===========================================
+set ignorecase          "大文字小文字の区別をなくす
+set hlsearch            "検索結果をハイライトをつけて表示
 
 
-"------------------------------------------------------
-" for :SyntaxInfo command
-"------------------------------------------------------
-function! s:get_syn_id(transparent)
-  let synid = synID(line("."), col("."), 1)
-  if a:transparent
-    return synIDtrans(synid)
-  else
-    return synid
-  endif
-endfunction
-function! s:get_syn_attr(synid)
-  let name = synIDattr(a:synid, "name")
-  let ctermfg = synIDattr(a:synid, "fg", "cterm")
-  let ctermbg = synIDattr(a:synid, "bg", "cterm")
-  let guifg = synIDattr(a:synid, "fg", "gui")
-  let guibg = synIDattr(a:synid, "bg", "gui")
-  return {
-        \ "name": name,
-        \ "ctermfg": ctermfg,
-        \ "ctermbg": ctermbg,
-        \ "guifg": guifg,
-        \ "guibg": guibg}
-endfunction
-function! s:get_syn_info()
-  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-  echo "name: " . baseSyn.name .
-        \ " ctermfg: " . baseSyn.ctermfg .
-        \ " ctermbg: " . baseSyn.ctermbg .
-        \ " guifg: " . baseSyn.guifg .
-        \ " guibg: " . baseSyn.guibg
-  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-  echo "link to"
-  echo "name: " . linkedSyn.name .
-        \ " ctermfg: " . linkedSyn.ctermfg .
-        \ " ctermbg: " . linkedSyn.ctermbg .
-        \ " guifg: " . linkedSyn.guifg .
-        \ " guibg: " . linkedSyn.guibg
-endfunction
-command! SyntaxInfo call s:get_syn_info()
-
+"====================================others==========================================
+set history=200                        "コマンド/検索パターンをx件まで保存
+set mouse=a                            "マウスの操作の有効化
+set whichwrap=b,s,h,l,<,>,[,]          "行頭/行末の左右移動で行をまたぐ
+set paste                              "貼り付けモードが動き出す
+set visualbell t_vb=                   "ビープ音を視覚表示
+set noerrorbells                       "エラーメッセージ表示時にビープ音を鳴らさない
+set clipboard=unnamedplus,autoselect   "クリップボードを共有する
+set noswapfile                         "スワップファイルを作らない
 
