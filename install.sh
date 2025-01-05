@@ -2,9 +2,9 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-if [ "$(uname)" == 'Darwin' ]; then
+if [ "$(uname)" = 'Darwin' ]; then
   OS='Mac'
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
   OS='Linux'
 else
   echo "Your platform ($(uname -a)) is not supported."
@@ -37,14 +37,14 @@ ln -sf $SCRIPT_DIR/.tmux.conf ~/.tmux.conf
 ln -sf $SCRIPT_DIR/tmux-alias.sh ~/bin/tmux-alias.sh
 
 
-if [ $OS == 'Mac' ]; then
+if [ $OS = 'Mac' ]; then
 	unlink ~/.zshrc
   unlink $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
 	ln -sf $SCRIPT_DIR/.zshrc ~/.zshrc
   ln -sf $SCRIPT_DIR/.ghostty.config $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
 fi
 
-if [ $OS == 'Linux' ]; then
+if [ $OS = 'Linux' ]; then
 	unlink ~/.bashrc
 	unlink ~/.bash_profile
 	ln -sf $SCRIPT_DIR/.bashrc ~/.bashrc

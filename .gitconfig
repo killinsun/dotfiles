@@ -2,7 +2,7 @@
 	name = kill_in_sun
 	email = noneck.0311@gmail.com
 [ghq]
-	root = ~/src
+	root = ~/ghq
 [url "github:"]
   InsteadOf = https://github.com/
   InsteadOf = git@github.com:
