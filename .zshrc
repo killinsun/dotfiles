@@ -83,3 +83,7 @@ export PATH=$PATH:/Users/ryota/Library/Application\ Support/JetBrains/Toolbox/sc
 . "$HOME/.cargo/env"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ryota.takeuchi/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
